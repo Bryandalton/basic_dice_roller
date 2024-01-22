@@ -3,8 +3,6 @@ import random
 print("welcome to dice roller basic!")
 print("----------------------------")
 
-# print("how many six sided dice would you like to roll?")
-
 #validate input
 while True:
     try:
