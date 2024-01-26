@@ -4,21 +4,42 @@ print("welcome to dice roller basic!")
 print("----------------------------")
 
 #validate input
-while True:
-    try:
-        faces= int(input('How any sides would you like your die to have? (max: 100) '))
-        if (faces > 0 and faces <= 100):
-            pass
-        else:print("invalid input, please try again.")
-        num_pick= int(input('How many dice would you like to roll? (max:10) '))
-        if (num_pick > 0 and num_pick <= 10):
-            pass
-        else:print("invalid input, please try again.")
-        bonus = int(input('Bonus (applies to all die rolls): '))
-        if bonus: 
-            break
-    except:
-        print("please provide an integer.")
+def valid_faces():
+    while True:
+        try:
+            faces_input = int(input('How any sides would you like your die to have? (max: 100) '))
+            if (faces_input > 0 and faces_input <= 100):
+                return faces_input
+            else:print("invalid input, please try again.")
+        except:
+            print("please provide an integer.")
+
+faces = valid_faces()
+
+def valid_pick():
+     while True:
+        try:
+            num_pick= int(input('How many dice would you like to roll? (max:10) '))
+            if (num_pick > 0 and num_pick <= 10):
+                return num_pick
+            else:print("invalid input, please try again.")
+            
+        except:
+            print("please provide an integer.")
+
+amountofdice = valid_pick()
+
+
+def get_bonus():
+     while True:
+        try:
+            bonus_input = int(input('Bonus(applies to all die rolls): '))
+            if bonus_input: 
+                return bonus_input
+        except:
+            print("please provide an integer.")
+
+bonus = get_bonus()
 
 def rollDice(amountofdice, faces, bonus):
     totalsum= 0
@@ -37,4 +58,4 @@ def rollDice(amountofdice, faces, bonus):
     print('Average: ', average)
     print('Highest: ', highest)
 
-rollDice(num_pick, faces, bonus)
+rollDice(amountofdice, faces, bonus)
