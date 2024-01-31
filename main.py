@@ -14,8 +14,6 @@ def valid_faces():
         except:
             print("please provide an integer.")
 
-faces = valid_faces()
-
 def valid_pick():
      while True:
         try:
@@ -27,9 +25,6 @@ def valid_pick():
         except:
             print("please provide an integer.")
 
-amountofdice = valid_pick()
-
-
 def get_bonus():
      while True:
         try:
@@ -38,8 +33,6 @@ def get_bonus():
                 return bonus_input
         except:
             print("please provide an integer.")
-
-bonus = get_bonus()
 
 def rollDice(amountofdice, faces, bonus):
     totalsum= 0
@@ -57,5 +50,11 @@ def rollDice(amountofdice, faces, bonus):
     print('Total: ', totalsum)
     print('Average: ', average)
     print('Highest: ', highest)
+
+faces = valid_faces()
+
+amountofdice = valid_pick()
+
+bonus = get_bonus()
 
 rollDice(amountofdice, faces, bonus)
